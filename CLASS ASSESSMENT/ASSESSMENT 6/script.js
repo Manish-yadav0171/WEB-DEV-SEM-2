@@ -1,40 +1,29 @@
-let fontSize = 16;
-let isVisible = true;
-
 function changeHeading() {
-    let input = document.getElementById("inputText").value;
-    if (input !== "") {
-        document.getElementById("heading").innerText = input;
-    }
+  let text = document.getElementById("newHeading").value;
+  if (text) {
+    document.getElementById("heading").textContent = text;
+  }
 }
 
 function changeBackground() {
-    let colors = ["#f8d7da", "#d4edda", "#d1ecf1", "#fff3cd"];
-    let randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.backgroundColor = randomColor;
+  document.body.style.backgroundColor = "lightblue";
 }
 
 function increaseFont() {
-    fontSize += 2;
-    document.getElementById("para").style.fontSize = fontSize + "px";
+  let para = document.getElementById("paragraph");
+  let size = parseInt(window.getComputedStyle(para).fontSize);
+  para.style.fontSize = (size + 2) + "px";
 }
 
 function toggleParagraph() {
-    let para = document.getElementById("para");
-    if (isVisible) {
-        para.style.display = "none";
-    } else {
-        para.style.display = "block";
-    }
-    isVisible = !isVisible;
+  let para = document.getElementById("paragraph");
+  para.style.display = (para.style.display === "none") ? "block" : "none";
 }
 
 function resetPage() {
-    document.getElementById("heading").innerText = "Welcome to JavaScript Lab";
-    document.body.style.backgroundColor = "#e5e5e5";
-    document.getElementById("para").style.fontSize = "16px";
-    document.getElementById("para").style.display = "block";
-    document.getElementById("inputText").value = "";
-    fontSize = 16;
-    isVisible = true;
+  document.getElementById("heading").textContent = "Welcome to JavaScript Lab";
+  document.body.style.backgroundColor = "white";
+  document.getElementById("paragraph").style.fontSize = "16px";
+  document.getElementById("paragraph").style.display = "block";
+  document.getElementById("newHeading").value = "";
 }
