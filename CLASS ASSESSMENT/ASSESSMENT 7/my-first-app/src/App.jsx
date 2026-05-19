@@ -6,9 +6,9 @@ function App() {
     <div>
       <Header title="📋 Student App" />
 
-      <StudentCard name="Aman" marks={92} />
-      <StudentCard name="Priya" marks={78} />
-      <StudentCard name="Rahul" marks={85} />
+      <StudentCard name="Rishabh" marks={92} />
+      <StudentCard name="Supriya" marks={78} />
+      <StudentCard name="Paul" marks={85} />
     </div>
   );
 }
